@@ -46,7 +46,7 @@ const WhyChoose = () => {
           textShadow: "2px 2px 8px rgba(0,0,0,0.3)",
         }}
       >
-        Why Choose SpeedoLoan? 
+        Why Choose 5Minuteloan? 
       </Typography>
 
       <Grid container spacing={4} justifyContent="center">

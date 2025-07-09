@@ -41,7 +41,7 @@ import Eligibility from "./pages/Dashboard/Eligibility/Eligibility";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PanUpload from "./pages/Dashboard/PanUpload/PanUpload";
 import DocumentUpload from "./pages/Dashboard/DocumentUpload/DocumentUpload";
-import ThankYou from "./pages/Dashboard/ThankYou/ThankYou";
+import ThankYou from "./pages/ThankYou";
 import UploadSalaryslip from "./pages/Dashboard/UploadSalaryslip/UploadSalaryslip";
 import UploadUtilitybill from "./pages/Dashboard/UploadUtilitybill/UploadUtilitybill";
 import LeadPreview from "./pages/Dashboard/ProfilePage/LeadPreview";
@@ -90,6 +90,7 @@ function Router() {
           <Route path="rateandterms" element={<RateandTerms />} />
           <Route path="privacypolicy" element={<PrivacyPolicy />} />
           <Route path="termsandconditions" element={<TermsandConditions />} />
+          <Route path="thankyou" element={<ThankYou />} />
           <Route path="Instant-Personal-Loan-for-Salaried-in-Delhi" element={<Delhi />} />
           <Route path="advance-loans-Online-in-Bangalore" element={<Banglore />} />
           <Route path="loan-agency-in-mumbai" element={<Mumbai />} />

@@ -37,7 +37,7 @@ const TermsandConditions = () => {
             <div className="flex flex-center content_row">
               <div className="content_item" style={{ maxWidth: "90%" }}>
                 <p>
-                  Welcome to the Speedoloan website, operated by Agrim Fincap Pvt Ltd ("we", "us", "our"). By accessing or using
+                  Welcome to the 5Minuteloan website, operated by Agrim Fincap Pvt Ltd ("we", "us", "our"). By accessing or using
                   our website ("Site") and services ("Services"), you agree to
                   be bound by the following terms and conditions ("Terms").
                   Please read them carefully.
@@ -143,7 +143,7 @@ const TermsandConditions = () => {
               <div className="content_item">
                 <h2>Data Deletion Policy</h2>
                 <p className="mt10">
-                  At Speedoloan, we value your privacy and are committed to
+                  At 5Minuteloan, we value your privacy and are committed to
                   ensuring your personal data is handled securely and
                   responsibly. If you wish to delete your account and personal
                   data, please follow the steps below:
@@ -153,7 +153,7 @@ const TermsandConditions = () => {
                 </p>
                 <ul>
                   <li className="tc_li">
-                    <b>Open the Speedoloan App:</b> Launch the app on your
+                    <b>Open the 5Minuteloan App:</b> Launch the app on your
                     mobile device and log in to your account.
                   </li>
                   <li className="tc_li">
@@ -200,13 +200,13 @@ const TermsandConditions = () => {
                   </li>
                   <li className="tc_li">
                     <b>Outstanding Loans:</b> If you have any outstanding loans
-                    or financial obligations with Speedoloan, please settle
+                    or financial obligations with 5Minuteloan, please settle
                     them before requesting data deletion.
                   </li>
                   <li className="tc_li">
                     <b>Customer Support:</b> If you encounter any issues or have
                     questions about the data deletion process, please contact
-                    our customer support team at info@speedoloan.com or call
+                    our customer support team at care@5Minuteloan.com or call
                     us at +919099909941.
                   </li>
                 </ul>
@@ -221,7 +221,7 @@ const TermsandConditions = () => {
                 </p>
                 <ul>
                   <li className="tc_li">Agrim Fincap Private Limited</li>
-                  <li className="tc_li">info@speedoloan.com</li>
+                  <li className="tc_li">care@5Minuteloan.com</li>
                   <li className="tc_li">+9190999 09941</li>
                 </ul>
 

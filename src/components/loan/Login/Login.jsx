@@ -272,7 +272,7 @@ function Login() {
                   By selecting this checkbox, I authorize the receipt of digital communications
                   {showMore ? (
                     <span>
-                      , such as phone calls, SMS, emails, and WhatsApp messages, at the phone number, email address, and app I have provided from Speedoloan. Furthermore, I acknowledge that I have reviewed and accept the , <Link to="/termsandconditions">Terms and Conditions</Link> and <Link to="/privacypolicy"> Privacy Policy</Link>.
+                      , such as phone calls, SMS, emails, and WhatsApp messages, at the phone number, email address, and app I have provided from 5Minuteloan. Furthermore, I acknowledge that I have reviewed and accept the , <Link to="/termsandconditions">Terms and Conditions</Link> and <Link to="/privacypolicy"> Privacy Policy</Link>.
                     </span>
                   ) : (
                     <span>
@@ -373,7 +373,7 @@ function Login() {
                     <h4>Short Loan</h4>
                   </div>
                   <p>
-                    Discover the convenience of short loans at Speedoloan,
+                    Discover the convenience of short loans at 5Minuteloan,
                     designed to meet your immediate financial needs with ease.
                   
                   </p>
@@ -462,7 +462,7 @@ This is short term loan service only for salaried individuals with a salary abov
             <div className="flex flex-center content_row">
               <div className="content_item" style={{ maxWidth: "90%" }}>
                 <p>
-                  Welcome to the Speedoloan website, operated by Agrim Private Limited ("we", "us", "our"). By accessing or using
+                  Welcome to the 5Minuteloan website, operated by Agrim Private Limited ("we", "us", "our"). By accessing or using
                   our website ("Site") and services ("Services"), you agree to
                   be bound by the following terms and conditions.
                 </p>

@@ -2,8 +2,7 @@
 export default 
 
 {
-
-   API_BASEPATH: 'https://crm.speedoloan.com/api',
+   API_BASEPATH: 'https://5minuteloancrm.com/api',
 
     loan:{
        SEND_OTP: "/Api/Website/InstantJourneyController/appCustomerRegisteration",

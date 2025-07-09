@@ -35,6 +35,9 @@ margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+        overflow-y: auto; /* Enable scrolling */
+    max-height: 90vh; /* Prevents content from overflowing */
+
 
     .box{
         padding: 23px 25px;
@@ -87,6 +90,26 @@ color: #fff;
   }
   .right{
   margin-inline: auto;
+  }
+}
+.principal-input {
+  appearance: textfield; /* Ensures default number input appearance */
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  width: 100%; /* Adjust width to fit container */
+  padding: 8px;
+  text-align: center;
+}
+
+.principal-input::-webkit-outer-spin-button,
+.principal-input::-webkit-inner-spin-button {
+  appearance: auto; /* Enables the steppers */
+}
+
+@media (max-width: 768px) {
+  .principal-input {
+    font-size: 16px; /* Increase font size for better touch experience */
+    padding: 10px;
   }
 }
 

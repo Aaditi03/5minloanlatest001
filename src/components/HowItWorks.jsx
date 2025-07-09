@@ -49,7 +49,7 @@ const HowItWorks = () => {
           sx={{
             color: "black",
             mb: 6,
-            background: "linear-gradient(135deg, #ff6a00, #ff9800)", // Vibrant Orange Gradient (Same as How It Works)
+            background: 'linear-gradient(90deg, #00bfa6, #00d4ff)',
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             textShadow: "2px 2px 8px rgba(0,0,0,0.3)",

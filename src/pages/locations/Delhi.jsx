@@ -62,12 +62,12 @@ However, with amazing positives comes a few challenges, including hefty expenses
             Instant Personal Loan for Salaried Professions
             </h3>
             <p>
-            Undoubtedly, running out of money is common here. However, instant personal loan online for salaried professionals is a unique solution to address this recurring problem. If you are somebody who is a working professional, you can easily get an instant personal loan from RBI-registered NBFC Speedoloan, the best instant personal loan app in India, to effectively manage your expenses or resume your halted activities.
+            Undoubtedly, running out of money is common here. However, instant personal loan online for salaried professionals is a unique solution to address this recurring problem. If you are somebody who is a working professional, you can easily get an instant personal loan from RBI-registered NBFC 5Minuteloan, the best instant personal loan app in India, to effectively manage your expenses or resume your halted activities.
 
             </p>
             <h3>Who is Eligible for Taking an Instant Personal Loan?</h3>
             <p className="mt6">
-            As discussed, Speedoloan offers instant personal loans online to those who are working professionals. Irrespective of whether you work in corporate or non-corporate, we have got you covered. We have detailed the prerequisites below which are necessary for taking a loan. Let’s go through them one by one in detail.
+            As discussed, 5Minuteloan offers instant personal loans online to those who are working professionals. Irrespective of whether you work in corporate or non-corporate, we have got you covered. We have detailed the prerequisites below which are necessary for taking a loan. Let's go through them one by one in detail.
             </p>
             <ul className="content_list">
               <li>First and foremost, the concerned person willing to take an instant personal loan in Delhi must be a resident of India. You must have relevant documents enough to prove your Indian nationality. Any non-resident of India, including tourists is not eligible to avail our loan services.</li>
@@ -76,7 +76,7 @@ However, with amazing positives comes a few challenges, including hefty expenses
             </ul>
             <h3>Instant Personal Loan Apply: What Documents are Required?</h3>
             <p className="mt6">
-            Typically, loan application in India is considered a tedious and time-consuming process, requiring a bundle of documents to prove your credibility. In contrast, we have broken the stereotype by asking for minimal documents to apply for — an instant small personal loan, emergency personal loan, short-term loan, long-term loan, etc at Speedoloan. Here is a list of the documents you need to have before personal loan online apply.
+            Typically, loan application in India is considered a tedious and time-consuming process, requiring a bundle of documents to prove your credibility. In contrast, we have broken the stereotype by asking for minimal documents to apply for — an instant small personal loan, emergency personal loan, short-term loan, long-term loan, etc at 5Minuteloan. Here is a list of the documents you need to have before personal loan online apply.
             </p>
             <ul className="content_list">
               <li>Identity Proof (such as Aadhar card, Voter card, etc)</li>
@@ -87,10 +87,10 @@ However, with amazing positives comes a few challenges, including hefty expenses
             </ul>
             <h3>Final Words</h3>
             <p className="mt6">
-            Having the above-mentioned documents can be a ticket to getting your loan approved in minutes. If you are a good fit as per the eligibility criteria and possess the necessary documents, Speedoloan is your go-to financial partner in urgent needs. VISIT OUR WEBSITE TO APPLY FOR A LOAN NOW.
+            Having the above-mentioned documents can be a ticket to getting your loan approved in minutes. If you are a good fit as per the eligibility criteria and possess the necessary documents, 5Minuteloan is your go-to financial partner in urgent needs. VISIT OUR WEBSITE TO APPLY FOR A LOAN NOW.
             </p>
             <div className="button_container flex justify-center mt30">
-              <Link to="/apply-now">Apply Now</Link>
+              <a href="https://agrimfincap.roopya.money/customer/personal_loan/6e50f4fad0d8dda32d4165cd34676deb66e7373f0c579ff0ec88a266ccb0d365/3f9dd989923ae9ebde684cc097a344b197991f737bb61e802b59dd099e5eb407">Apply Now</a>
             </div>
           </div>
         </div>

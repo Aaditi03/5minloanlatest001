@@ -25,20 +25,20 @@ Get Your Instant Personal Loan in Bangalore Within Minutes!"
 
             </h1>
             <p>
-            Bangalore(or Bengaluru), the “Silicon Valley of India” reflects a beautiful amalgamation of culture and modernity. Like Gurugram, Noida, Mumbai, etc, Bangalore is an IT hub, comprising a great number of MNCs. Unsurprisingly, it is one of the most expensive cities in India where survival is challenging, even for corporate employees. Be it transportation fares, the cost of accommodation, food, or navigating through miscellaneous expenses, the cost of living is undoubtedly high and handsome. Speedoloan, the best short-term loan app
+            Bangalore(or Bengaluru), the "Silicon Valley of India" reflects a beautiful amalgamation of culture and modernity. Like Gurugram, Noida, Mumbai, etc, Bangalore is an IT hub, comprising a great number of MNCs. Unsurprisingly, it is one of the most expensive cities in India where survival is challenging, even for corporate employees. Be it transportation fares, the cost of accommodation, food, or navigating through miscellaneous expenses, the cost of living is undoubtedly high and handsome. 5Minuteloan, the best short-term loan app
 
 in India, ensures you never run out of money or have instant access to funds in emergencies.
             </p>
             <br />
-            <h3>Speedoloan: The Best Emergency Loan App without Checking Credit Score</h3>
+            <h3>5Minuteloan: The Best Emergency Loan App without Checking Credit Score</h3>
             <p>
             Do you have a poor credit score? Are you desperate because your loan applications are continuously getting rejected? If your answer is yes, you are at the right place. To begin with, we are an authentic and highly reliable quick loan app, that extends its unparalleled services to the people of Bangalore. We offer unmatchable instant loans for salaried professionals, including instant personal loans online, emergency personal loans, instant small personal loans, long-term loans, and many more.
             </p><br/>
-            <p>What makes us different is that we offer fair chances to even those with low CIBIL scores. Low or poor CIBIL score is generally seen as a red flag. However, our evaluation process considers a range of factors beyond your credit history, enabling you to get an instant personal loan without any hassle. Are you thinking about collateral? Don’t worry! You’ll be relieved to know that our loan services are completely collateral-free. So, what are you waiting for? If you need instant funds, download the Speedoloan app and APPLY NOW.</p>
+            <p>What makes us different is that we offer fair chances to even those with low CIBIL scores. Low or poor CIBIL score is generally seen as a red flag. However, our evaluation process considers a range of factors beyond your credit history, enabling you to get an instant personal loan without any hassle. Are you thinking about collateral? Don't worry! You'll be relieved to know that our loan services are completely collateral-free. So, what are you waiting for? If you need instant funds, download the 5Minuteloan app and APPLY NOW.</p>
             <br />
-            <h3>Let’s Take a Quick Look at Our Highlights </h3>
+            <h3>Let's Take a Quick Look at Our Highlights </h3>
             <p>
-            Our highlights will give you valuable insights about how flexible and user-friendly our loan application and disbursal process is. Let’s have a quick look at the highlights one by one:
+            Our highlights will give you valuable insights about how flexible and user-friendly our loan application and disbursal process is. Let's have a quick look at the highlights one by one:
             </p>
             <br />
             <ul className="content_list">
@@ -51,22 +51,22 @@ in India, ensures you never run out of money or have instant access to funds in 
             <li>Once the loan is approved, we waste no time in disbursing the loan amount directly into your bank account.</li>
             </ul>
             <br />
-            <h3>How to Apply for an Instant Personal Loan from Speedoloan?</h3>
+            <h3>How to Apply for an Instant Personal Loan from 5Minuteloan?</h3>
             <p>
             Instant personal loan apply is effortless if you follow the below-mentioned steps carefully.
             </p>
             <br />
             <ul className="content_list">
-              <li><b>Step 1.</b> Visit the Speedoloan official website at https://Speedoloan.com/ and register as a new user.
+              <li><b>Step 1.</b> Visit the 5Minuteloan official website at https://5Minuteloan.com/ and register as a new user.
               </li>
               <li><b>Step 2.</b>Enter your personal, employment, and income details carefully.</li>
               <li><b>Step 3.</b>Upload the required documents for verification and click "Submit."</li>
             </ul>
             <p>
-            That’s it, the instant personal loan online application at Speedoloan is that simple.
+            That's it, the instant personal loan online application at 5Minuteloan is that simple.
             </p>
             <div className="button_container flex justify-center mt30">
-              <Link to="/apply-now">Apply Now</Link>
+              <a href="https://agrimfincap.roopya.money/customer/personal_loan/6e50f4fad0d8dda32d4165cd34676deb66e7373f0c579ff0ec88a266ccb0d365/3f9dd989923ae9ebde684cc097a344b197991f737bb61e802b59dd099e5eb407">Apply Now</a>
             </div>
           </div>
         </div>

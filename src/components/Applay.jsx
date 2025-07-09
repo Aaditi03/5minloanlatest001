@@ -7,7 +7,7 @@ const Apply = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('https://crm.speedoloan.com/Api/TaskApi/savelendingpage', {
+      const response = await fetch('https://crm.5Minuteloan.com/Api/TaskApi/savelendingpage', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

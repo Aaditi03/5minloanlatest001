@@ -109,7 +109,7 @@ const CancellationRefundPolicy = () => {
             </div>
           ))}
           <Typography>
-            By using Speedo Loan, you acknowledge that you have read,
+            By using 5Minute Loan, you acknowledge that you have read,
             understood, and agree to these Cancellation and Refund Policy. Thank
             you for choosing us as your business loan partner!
           </Typography>

@@ -1,157 +1,117 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Box, Typography, Container } from '@mui/material';
-import AmountImage from '../images/rupees.png'; 
-import TenureImage from '../images/tenure.png'; 
-import UnsecureLoanImage from '../images/unsecure.png'; // Replace with your unsecure loan icon image path
-import PaperlessDisbursal from '../images/7.webp';
-import disbursal from '../images/9.webp';
+import React from 'react';
+import Image1 from '../images/image20.png';
+import Image2 from '../images/image21.png';
+import Image3 from '../images/image22.png';
+import ArrowIcon from '../images/arrow.png';
 
-const LoanPart = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.03 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
-
+const LoanEligibilitySection = () => {
   return (
-    <Container ref={containerRef} sx={{ mt: 6, overflow: 'hidden' }}>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          justifyContent: 'center',
-          alignItems: 'center',
-          overflow: 'hidden',
-          animation: {
-            xs: 'none',
-            md: isVisible ? 'marquee 20s linear infinite' : 'none',
-          },
-        }}
-      >
-        {/* Amount Box */}
-        <Box sx={commonBoxStyles}>
-          <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
-            Loan Amount
-          </Typography>
-          <img
-            src={AmountImage}
-            alt="Loan Amount Icon"
-            style={{ width: 50, height: 50, marginBottom: '8px' }}
-          />
-          <Typography variant="body1" sx={{ color: 'black' }}>
-            Loan from ₹5000 - ₹100000
-          </Typography>
-        </Box>
+    <div className="loan-eligibility-section">
+      <div className="container">
+        <h2>
+          Who qualifies for <span className="highlight-text">our loans?</span>
+        </h2>
+        <p className="description">
+          Don't lose hope if you could not get your loans approved till now! Reach out to us,
+          apply now and get it transferred instantly. We specialize in offering quick, hassle-free
+          loans when traditional lenders turn you away.
+        </p>
 
-        {/* Tenure Box */}
-        <Box sx={commonBoxStyles}>
-          <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
-            Loan Tenure
-          </Typography>
-          <img
-            src={TenureImage}
-            alt="Loan Tenure Icon"
-            style={{ width: 50, height: 50, marginBottom: '8px' }}
-          />
-          <Typography variant="body1" sx={{ color: 'black' }}>
-            Tenure from 7 to 40 days
-          </Typography>
-        </Box>
+        <div className="arrow-icon">
+          <img src={ArrowIcon} alt="arrow" />
+        </div>
 
-        {/* Paperless Disbursal */}
-        <Box sx={commonBoxStyles}>
-          <Typography variant="h6" gutterBottom sx={{ color: 'black' }}>
-            100% Paperless
-          </Typography>
-          <img
-            src={PaperlessDisbursal}
-            alt="Paperless Disbursal Icon"
-            style={{ width: 60, height: 60, marginBottom: '8px' }}
-          />
-          <Typography variant="body1" sx={{ color: 'black' }}>
-            100% Paperless Verification Process
-          </Typography>
-        </Box>
+        <div className="card-grid">
+          <div className="card">
+            <img src={Image1} alt="Person 1" />
+          </div>
+          <div className="card">
+            <img src={Image2} alt="Low credit score" />
+          </div>
+          <div className="card">
+            <img src={Image3} alt="Low credit again" />
+          </div>
+        </div>
+      </div>
 
-        {/* Instant Disbursal */}
-        <Box sx={commonBoxStyles}>
-          <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
-            Instant Loan
-          </Typography>
-          <img
-            src={disbursal}
-            alt="Instant Disbursal Icon"
-            style={{ width: 70, height: 70, marginBottom: '8px' }}
-          />
-          <Typography variant="body1" sx={{ color: 'black' }}>
-            Swift Payout
-          </Typography>
-        </Box>
+      <style jsx>{`
+        .loan-eligibility-section {
+          background: #f4fbfd;
+          padding: 60px 20px;
+          margin: 40px; /* Added margin on all sides */
+        }
 
-        {/* Unsecure Loan Box */}
-        <Box sx={commonBoxStyles}>
-          <Typography variant="h5" gutterBottom sx={{ color: 'black' }}>
-            Unsecured Loan
-          </Typography>
-          <img
-            src={UnsecureLoanImage}
-            alt="Unsecure Loan Icon"
-            style={{ width: 50, height: 50, marginBottom: '8px' }}
-          />
-          <Typography variant="body1" sx={{ color: 'black' }}>
-            Start now
-          </Typography>
-        </Box>
-      </Box>
+        .container {
+          max-width: 1400px; /* Increased width */
+          margin: auto;
+          text-align: center;
+        }
 
-      {/* Define keyframes for animations */}
-      <style>
-        {`
-          @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        h2 {
+          font-size: 36px;
+          font-weight: 700;
+        }
+
+        .highlight-text {
+          background: linear-gradient(90deg, #00bfa6, #00d4ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+          margin-top: 20px;
+          color: #444;
+          font-size: 16px;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .arrow-icon {
+          margin-top: 20px;
+        }
+
+        .arrow-icon img {
+          width: 50px;
+          height: auto;
+        }
+
+        .card-grid {
+          margin-top: 40px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        .card {
+          position: relative;
+          border-radius: 20px;
+          overflow: hidden;
+          width: 380px;
+          height: 220px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+          h2 {
+            font-size: 28px;
           }
-        `}
-      </style>
-    </Container>
+
+          .card {
+            width: 90%;
+            height: auto;
+          }
+        }
+      `}</style>
+    </div>
   );
 };
 
-// Common styles for each box
-const commonBoxStyles = {
-  backgroundColor: 'white',
-  borderRadius: 2,
-  padding: 2,
-  boxShadow: 3,
-  textAlign: 'center',
-  height: { xs: '150px', md: '200px' },
-  width: { xs: '90%', md: '300px' },
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  transition: 'transform 0.3s, box-shadow 0.3s',
-  '&:hover': {
-    transform: 'scale(1.05)',
-    boxShadow: 6,
-  },
-  margin: '16px',
-};
-
-export default LoanPart;
+export default LoanEligibilitySection;

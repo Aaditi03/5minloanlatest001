@@ -88,7 +88,7 @@ const Applycompo = () => {
             <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
               <Button
                 variant="contained"
-                onClick={() => navigate("/apply")}
+                href="https://agrimfincap.roopya.money/customer/personal_loan/c4f785faa778307080bb24382f32b9ec862f5f8af733408582f79bf59888aa7a/2f0be3f1474e21f6fa21b6fd407d7bf2891c74e73da741bf82ed2966a6d2aeb2"
                 sx={{
                   background: "linear-gradient(45deg, #ff5722, #ff9800)", // New Gradient
                   color: "white",

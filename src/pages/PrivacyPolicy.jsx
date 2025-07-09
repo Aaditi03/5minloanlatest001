@@ -41,7 +41,7 @@ const PrivacyPolicy = () => {
               <div className="content_item" style={{ maxWidth: "90%" }}>
                 <p>
                   <b>Agrim Fincap Private Limited</b> ("we," "our,"
-                  "us") operates the https://www.speedoloan.com website (the
+                  "us") operates the <a href="https://5minuteloan.com/" target="_blank" rel="noopener noreferrer">https://5minuteloan.com/</a> website (the
                   "Service"). This Privacy Policy explains how we collect, use,
                   and share your personal information when you use our Service.
                 </p>
@@ -163,7 +163,7 @@ const PrivacyPolicy = () => {
               <div className="content_item" style={{ maxWidth: "90%" }}>
                 <h2 className="mb10 mt10">Grievance Officer</h2>
                 <p className="mt10">
-                  At Speedoloan, your privacy and satisfaction are our top
+                  At 5Minuteloan, your privacy and satisfaction are our top
                   priorities. To ensure your concerns are addressed promptly, we
                   have appointed a dedicated Grievance Officer. If you have any
                   issues or grievances regarding your personal information or
@@ -182,19 +182,18 @@ const PrivacyPolicy = () => {
                   </p>
                   <p className="mt10 flex flex-center">
                     <MdEmail className="content_icon mr5" />
-                    <span>care@speedoloan.com</span>
+                    <span>care@5Minuteloan.com</span>
                   </p>
                   <p className="mt10 flex flex-center">
                     <FaLocationArrow className="content_icon mr5" />
                     <span>
-                    276, First Floor, Gagan Vihar, Shahdara, Delhi 110051
-
+                    F 40, Phase 1, Sector 6, Noida, Gautam Buddha Nagar, Uttar Pradesh 201301
                     </span>
                   </p>
                 </div>
                 <p className="mt10">
                   We are committed to resolving your concerns in a timely and
-                  efficient manner. Thank you for choosing Speedoloan.
+                  efficient manner. Thank you for choosing 5Minuteloan.
                 </p>
               </div>
             </div>

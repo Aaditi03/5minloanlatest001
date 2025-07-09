@@ -20,7 +20,7 @@ function DocumentUpload() {
     const [isLoadingDocs, setIsLoadingDocs] = useState(true); // Loading state for docs
     const navigate = useNavigate();
     const { logout, handleEvent } = useContext(ContextDashboard);
-    const [password, setPassword] = useState("");
+    const [file_password, setFile_password] = useState("");
     const [isPDF, setIsPDF] = useState(false);
     const allDocsUploaded = documentsRequired.every(doc => uploadedDocuments[doc.name]);
 
@@ -90,7 +90,7 @@ function DocumentUpload() {
                     const param = {
                         profile_id: getStorage("cust_profile_id") || "",
                         file_ext: ext,
-                        password: doc.name === "Bank Statement" ? (password || "N/A") : "N/A",
+                        file_password: doc.name === "Bank Statement" ? (file_password || "N/A") : "N/A",
                         event_name: doc.event_name,
                         doc_type: doc.doc_type,
                         file: base64File,
@@ -170,8 +170,8 @@ function DocumentUpload() {
    </label>
    <input
        type="password"
-       value={password}
-       onChange={(e) => setPassword(e.target.value)}
+       value={file_password}
+       onChange={(e) => setFile_password(e.target.value)}
        placeholder="Enter PDF password"
        style={{
            width: "100%",

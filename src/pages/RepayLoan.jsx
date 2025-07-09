@@ -1,89 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../css/Common.css";
-import "../css/RepaymentDetails.css"; // Assuming the CSS is defined here
-import qr_image from "../images/speedoqr.png";
+import "../css/RepaymentDetails.css";
+import qr_image from "../images/5minuteqr.jpeg";
 import qr2 from "../images/qr2.png";
 import ChatButton from "../components/ChatButton";
 import { useNavigate } from "react-router-dom";
 import PaymentModal from "../components/Payment/PaymentModal";
-import CryptoJS from "crypto-js"; // Importing the crypto-js library
+import CryptoJS from "crypto-js";
 
 const RepayLoan = (props) => {
-    const [content, setContent] = useState("pannumber");
     const [getLoading, setLoading] = useState(false);
-    const [getPancard, setPancard] = useState("");
-    const [getOtp, setOtp] = useState("");
     const [repaymentData, setRepaymentData] = useState(null);
     const [orderId, setOrderId] = useState("");
     const [paymentStatus, setPaymentStatus] = useState("");
     const [isModalOpen, setModalOpen] = useState(false);
-    const [paymentAmount, setPaymentAmount] = useState(); // New state for part payment
+    const [paymentAmount, setPaymentAmount] = useState();
     const navigate = useNavigate();
-
-    const sendOtp = async () => {
-        setLoading(true);
-        try {
-            const resp = await fetch("https://crm.speedoloan.com/api/Api/CustomerDetails/Sendotp", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json; charset=UTF-8",
-                    Auth: "Y2M0Nzk0OGYwNmQyMjdmZTlhY2E1ZWQ1Nzk5YTZmMWE=",
-                    Accept: "application/json",
-                },
-                body: JSON.stringify({ pancard: getPancard }),
-            });
-
-            if (resp.status === 200) {
-                const dataset = await resp.json();
-                props.showmessage(dataset.Message);
-                if (dataset.Status === 1) {
-                    setContent("panotp");
-                }
-            }else{
-              const dataset=await resp.json();
-              props.showmessage(dataset.Message);
-            }
-        } catch (error) {
-          
-            console.error("Error sending OTP:", error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const verifyOtp = async () => {  
-        setLoading(true);
-        try {
-            const resp = await fetch("https://crm.speedoloan.com/api/Api/CustomerDetails/verifyOtp", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json; charset=UTF-8",
-                    Auth: "Y2M0Nzk0OGYwNmQyMjdmZTlhY2E1ZWQ1Nzk5YTZmMWE=",
-                    Accept: "application/json",
-                },
-                body: JSON.stringify({
-                    panNumber: getPancard,
-                    otp: getOtp,
-                }),
-            });
-
-            if (resp.status === 200) {
-                const dataset = await resp.json();
-                props.showmessage(dataset.Message);
-
-                if (dataset.Status === 1) {
-                    const repaymentData = dataset.repayment_data;
-                    setRepaymentData(repaymentData);
-                    setOrderId(dataset.order_id);
-                    setContent("amountfetched");
-                }
-            }
-        } catch (error) {
-            console.error("Error verifying OTP:", error);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     const payHere = async () => {
       setLoading(true);
@@ -92,14 +24,14 @@ const RepayLoan = (props) => {
           if (paymentAmount < repaymentData.total_due_amount) {
               total_due_amount = paymentAmount; // Use part payment amount if provided
           }
-  
+    
           const options = {
               key: "rzp_live_gSedwg0IRWdr5a",
               amount: (total_due_amount * 100).toString(),
               currency: "INR",
-              name: "Speedoloan",
-              description: getPancard,
-              image: "https://crm.speedoloan.com/public/images/18-BK_kixu8.png",
+              name: "5Minuteloan",
+              description: repaymentData.pancard,
+              image: "https://crm.5Minuteloan.com/public/images/18-BK_kixu8.png",
               order_id: orderId,
               prefill: {
                   name: "Hidden",
@@ -114,7 +46,7 @@ const RepayLoan = (props) => {
                       razorpay_signature: response.razorpay_signature,
                   };
   
-                  fetch("https://crm.speedoloan.com/api/Api/CustomerDetails/verifyRazorPayCheckPaymentStatus", {
+                  fetch("https://crm.5Minuteloan.com/api/Api/CustomerDetails/verifyRazorPayCheckPaymentStatus", {
                       method: "POST",
                       headers: {
                           "Content-Type": "application/json; charset=UTF-8",
@@ -137,7 +69,6 @@ const RepayLoan = (props) => {
                           });
   
                           setPaymentStatus(txnStatus === 'SUCCESS' ? "Payment Successful" : "Payment Verification Failed");
-                          setContent(txnStatus === 'SUCCESS' ? "paymentSuccess" : "paymentFailure");
                           setLoading(false);
                       })
                       .catch((error) => {
@@ -159,7 +90,7 @@ const RepayLoan = (props) => {
           console.error("Error during payment:", error);
           setLoading(false);
       }
-  };
+    };
   
 
     let processing = false; 
@@ -176,7 +107,7 @@ const RepayLoan = (props) => {
           const email = repaymentData.email;
           const phone = repaymentData.mobile;
   
-          const response = await fetch("https://crm.speedoloan.com/api/Api/RepayLoanApi/payuOrders", {
+          const response = await fetch("https://crm.5Minuteloan.com/api/Api/RepayLoanApi/payuOrders", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json; charset=UTF-8",
@@ -206,8 +137,8 @@ const RepayLoan = (props) => {
                   firstname: fullname,
                   email: email,
                   phone: phone,
-                  surl: "https://speedoloan.com/thanku",
-                  furl: "https://speedoloan.com/fail",
+                  surl: "https://5Minuteloan.com/thanku",
+                  furl: "https://5Minuteloan.com/fail",
                   hash: hashData.hash,
                   udf5:repaymentData.lead_id
               };
@@ -245,22 +176,12 @@ const RepayLoan = (props) => {
           setLoading(false);
           processing = false;
       }
-  };
+    };
   
 
 
-    const handlePAN = (e) => {
-        const value = e.target.value.toUpperCase();
-        if (/^[A-Z]{0,5}$/.test(value.slice(0, 5)) && /^[\d]{0,4}$/.test(value.slice(5, 9)) && /^[A-Z]{0,1}$/.test(value.slice(9))) {
-            setPancard(value);
-        }
-    };
-
-    const handleOTP = (e) => {
-        const value = e.target.value;
-        if (/^\d*$/.test(value) && value.length <= 4) {
-            setOtp(value);
-        }
+    const handleCloseModal = () => {
+        setModalOpen(false);
     };
 
     const loadScript = (src) => {
@@ -281,10 +202,6 @@ const RepayLoan = (props) => {
         setLoading(false);
     };
 
-    const handleCloseModal = () => {
-        setModalOpen(false);
-    };
-
     const handleRazorpay = () => {
         setModalOpen(false);
         payHere();
@@ -296,6 +213,7 @@ const RepayLoan = (props) => {
         payWithPayU();
         setLoading(false);
     };
+
     const handlePaymentAmountChange = (e) => {
       let value = e.target.value;
     
@@ -326,146 +244,126 @@ const RepayLoan = (props) => {
         </div>
 
         <div className="repay_loan_wrapper">
-          <div className="repay_loan_section">
-            {content === "pannumber" ? (
-              <div className="pan_number">
-                <p className="note mb20">
-                  Please verify the accuracy of the below details before doing any transfer.
-                </p>
-                <span>Please enter your PAN Details</span> <br />
-                <input type="text" value={getPancard} onChange={handlePAN} required maxLength={10} />
-                <div className="button_container mt30">
-                  <button onClick={sendOtp}>
-                    {getLoading ? <div className="loadinganim"></div> : "Get OTP"}
-                  </button>
-                </div>
-              </div>
-            ) : content === "panotp" ? (
-              <div className="pan_number">
-                <p className="pan_details mb20">PAN NUMBER : {getPancard}</p>
-                <input
-                  type="text"
-                  placeholder="Please enter the OTP received"
-                  value={getOtp}
-                  onChange={handleOTP}
-                  maxLength={4}
-                />
-                <p className="agreement">
-                  <input type="checkbox" />{" "}
-                  <span>
-                    To proceed with your loan application, please confirm your acceptance of our Terms and Conditions, Privacy Policy, and provide your consent for processing the payment.
-                  </span>
-                </p>
-                <div className="button_container mt20 ml10">
-                  <button onClick={verifyOtp}>
-                    {getLoading ? <div className="loadinganim"></div> : "Get Amount"}
-                  </button>
-                </div>
-              </div>
-            )  : content === "amountfetched" && repaymentData ? (
-              <div className="repayment-card">
-                <div className="repayment-header">
-                  <h2>Loan Repayment Details</h2>
-                </div>
+          {/* <div className="repay_loan_section">
+            {/* <div className="repayment-card"> */}
+              {/* <div className="repayment-header">
+                <h2>Loan Repayment Details</h2>
+              </div> */}
 
-                <div className="repayment-info">
-  <div className="info-item">
-    <span className="label">Loan Number:</span>
-    <span className="value">{repaymentData.loan_no}</span>
-  </div>
-  <div className="info-item">
-    <span className="label">Disbursal Date:</span>
-    <span className="value">{repaymentData.disbursal_date}</span>
-  </div>
-  <div className="info-item">
-    <span className="label">Repayment Date:</span>
-    <span className="value">{repaymentData.repayment_date}</span>
-  </div>
-  <div className="info-item">
-    <span className="label">Repayment Amount:</span>
-    <span className="value">₹{repaymentData.repayment_amount.toLocaleString()}</span>
-  </div>
-  <div className="info-item">
-    <span className="label">Loan Amount:</span>
-    <span className="value">₹{repaymentData.loan_recommended.toLocaleString()}</span>
-  </div>
-  <div className="info-item">
-    <span className="label">Real Interest:</span>
-    <span className="value">₹{repaymentData.real_interest.toLocaleString()}</span>
-  </div>
-  <div className="info-item">
-    <span className="label">Repayment With Interest:</span>
-    <span className="value">₹{repaymentData.total_due_amount.toLocaleString()}</span>
-  </div>
-  <div className="info-item due-amount">
-    <span className="label">Total Due Amount:</span>
-    <span className="value">₹{repaymentData.total_due_amount.toLocaleString()}</span>
-  </div>
-  <div className="info-item part-amount">
-    <span className="label">Amount To Pay</span>
-    {/* Make the Amount To Pay field editable */}
-    <input
-                            type="text"
-                            value={paymentAmount}
-                            onChange={handlePaymentAmountChange}
-                            placeholder="Enter payment amount"
-                        />
-  </div>
-</div>
-
-
-                <div className="repayment-button-container">
-                  <button className="repayment-button" onClick={handlePaymentClick}>
-                    {getLoading ? <div className="loadinganim"></div> : "Proceed to Pay"}
-                  </button>
+              {/* <div className="repayment-info">
+                <div className="info-item">
+                  <span className="label">Loan Number:</span>
+                  <span className="value">{repaymentData?.loan_no}</span>
                 </div>
-
-                {isModalOpen && (
-                  <PaymentModal 
-                    onClose={handleCloseModal} 
-                    onRazorpay={handleRazorpay} 
-                    // onPayU={handlePayU} 
-                    isLoading={getLoading} 
+                <div className="info-item">
+                  <span className="label">Disbursal Date:</span>
+                  <span className="value">{repaymentData?.disbursal_date}</span>
+                </div>
+                <div className="info-item">
+                  <span className="label">Repayment Date:</span>
+                  <span className="value">{repaymentData?.repayment_date}</span>
+                </div>
+                <div className="info-item">
+                  <span className="label">Repayment Amount:</span>
+                  <span className="value">₹{repaymentData?.repayment_amount?.toLocaleString()}</span>
+                </div>
+                <div className="info-item">
+                  <span className="label">Loan Amount:</span>
+                  <span className="value">₹{repaymentData?.loan_recommended?.toLocaleString()}</span>
+                </div>
+                <div className="info-item">
+                  <span className="label">Real Interest:</span>
+                  <span className="value">₹{repaymentData?.real_interest?.toLocaleString()}</span>
+                </div>
+                <div className="info-item">
+                  <span className="label">Repayment With Interest:</span>
+                  <span className="value">₹{repaymentData?.total_due_amount?.toLocaleString()}</span>
+                </div>
+                <div className="info-item due-amount">
+                  <span className="label">Total Due Amount:</span>
+                  <span className="value">₹{repaymentData?.total_due_amount?.toLocaleString()}</span>
+                </div>
+                <div className="info-item part-amount">
+                  <span className="label">Amount To Pay</span>
+                  <input
+                    type="text"
+                    value={paymentAmount}
+                    onChange={handlePaymentAmountChange}
+                    placeholder="Enter payment amount"
                   />
-                )}
-              </div>
-            ) : content === "paymentSuccess" ? (
-              <div className="payment-success">
-                <h3>{paymentStatus}</h3>
-                <p>Thank you for your payment!</p>
-              </div>
-            ) : null}
-          </div>
+                </div>
+              </div> */}
 
-          <div className="bank_details_section flex flex-center space-between">
-            <table className="details_table">
-              <tr>
-                <td><span className="account_field_value">Bank Name</span></td>
-                <td><span className="account_data_value">ICICI Bank Ltd</span></td>
-              </tr>
-              <tr>
-                <td><span className="account_field_value">Company Name</span></td>
-                <td><span className="account_data_value">Agrim Fincap Pvt Ltd Collection A/c</span></td>
-              </tr>
-              <tr>
-                <td><span className="account_field_value">Account No.</span></td>
-                <td><span className="account_data_value">802105000125</span></td>
-              </tr>
-              <tr>
-                <td><span className="account_field_value">IFSC Code</span></td>
-                <td><span className="account_data_value">ICIC0008021</span></td>
-              </tr>
-              <tr>
-                <td><span className="account_field_value">Branch Address</span></td>
-                <td><span className="account_data_value">Jagatpuri Branch </span></td>
-              </tr>
-              <tr>
-                <td><span className="account_field_value">Account Type</span></td>
-                <td><span className="account_data_value">Current</span></td>
-              </tr>
-            </table>
-            <div className="qr_details">
-              <img src={qr_image} alt="QR Code" />
+              {/* <div className="repayment-button-container">
+                <button className="repayment-button" onClick={handlePaymentClick}>
+                  {getLoading ? <div className="loadinganim"></div> : "Proceed to Pay"}
+                </button>
+              </div> */}
+
+              {/* {isModalOpen && (
+                <PaymentModal 
+                  onClose={handleCloseModal} 
+                  onRazorpay={handleRazorpay} 
+                  isLoading={getLoading} 
+                />
+              )}
+            </div> */}
+          {/* </div>  */}
+
+          <div className="bank_details_container">
+            <div className="bank_details_header">
+              <h2>Bank Transfer Details</h2>
+              <p className="bank_details_subtitle">You can make your loan repayment through any of the following methods:</p>
+              <div className="payment_methods">
+                <div className="payment_method">
+                  <i className="fas fa-university"></i>
+                  <span>Bank Transfer</span>
+                </div>
+                <div className="payment_method">
+                  <i className="fas fa-qrcode"></i>
+                  <span>Scan QR Code</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bank_details_section flex flex-center space-between">
+              <div className="bank_details_left">
+                <table className="details_table">
+                  <tr>
+                    <td><span className="account_field_value">Bank Name</span></td>
+                    <td><span className="account_data_value">ICICI Bank Ltd</span></td>
+                  </tr>
+                  <tr>
+                    <td><span className="account_field_value">Company Name</span></td>
+                    <td><span className="account_data_value">Agrim Fincap Pvt Ltd Collection A/c</span></td>
+                  </tr>
+                  <tr>
+                    <td><span className="account_field_value">Account No.</span></td>
+                    <td><span className="account_data_value">	802105000136</span></td>
+                  </tr>
+                  <tr>
+                    <td><span className="account_field_value">IFSC Code</span></td>
+                    <td><span className="account_data_value">ICIC0008021</span></td>
+                  </tr>
+                  <tr>
+                    <td><span className="account_field_value">Branch Address</span></td>
+                    <td><span className="account_data_value">Jagatpuri Branch </span></td>
+                  </tr>
+                  <tr>
+                    <td><span className="account_field_value">Account Type</span></td>
+                    <td><span className="account_data_value">Current</span></td>
+                  </tr>
+                </table>
+              </div>
+              <div className="bank_details_right">
+                <div className="qr_details">
+                  <h3>Scan QR Code to Pay</h3>
+                  <div className="qr_code_container">
+                    <img src={qr_image} alt="QR Code" />
+                  </div>
+                  <p className="qr_note">Scan this QR code using any UPI app to make your payment</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -514,8 +412,8 @@ const RepayLoan = (props) => {
             </div>
 
             <div className="pan_number">
-              <h2>What is the maximum and minimum repayment period at Speedoloan?</h2><br />
-              <p>At Speedoloan, we allow you enough time and flexibility to repay your loan. This is done to ensure that repayments don’t feel like a burden. However, when it comes to the precise duration, the minimum repayment period is 60 days, and the maximum repayment period is 40 days.</p>
+              <h2>What is the maximum and minimum repayment period at 5Minuteloan?</h2><br />
+              <p>At 5Minuteloan, we allow you enough time and flexibility to repay your loan. This is done to ensure that repayments don't feel like a burden. However, when it comes to the precise duration, the minimum repayment period is 60 days, and the maximum repayment period is 40 days.</p>
             </div>
           </div>
 

@@ -21,7 +21,7 @@ const InstantLoan = () => {
               </div>
               <h1 className="page_title mt30 mb20">Instant Loan</h1>
               <p>
-                At Speedoloan, we understand that urgent financial needs can arise
+                At 5Minuteloan, we understand that urgent financial needs can arise
                 unexpectedly, requiring immediate solutions. That's why we offer
                 a range of small instant loans designed to provide you with
                 quick access to funds when you need them the most. Whether
@@ -50,11 +50,11 @@ const InstantLoan = () => {
               </p>
               <br />
               <p>
-              At Speedoloan, we are committed to providing instant loan urgent solutions that cater to your specific needs. Whether you're dealing with an unexpected expense or need extra cash quickly, our instant loan options offer the flexibility and speed you require. Trust Speedoloan for reliable and fast financial support, and experience the convenience of our small instant loans and instant personal loans online today.
+              At 5Minuteloan, we are committed to providing instant loan urgent solutions that cater to your specific needs. Whether you're dealing with an unexpected expense or need extra cash quickly, our instant loan options offer the flexibility and speed you require. Trust 5Minuteloan for reliable and fast financial support, and experience the convenience of our small instant loans and instant personal loans online today.
               </p>
               <br />
               <div className="button_container flex justify-center">
-                <Link to="/apply-now">Apply Now</Link>
+                <a href="https://agrimfincap.roopya.money/customer/personal_loan/6e50f4fad0d8dda32d4165cd34676deb66e7373f0c579ff0ec88a266ccb0d365/3f9dd989923ae9ebde684cc097a344b197991f737bb61e802b59dd099e5eb407">Apply Now</a>
               </div>
             </div>
           </div>

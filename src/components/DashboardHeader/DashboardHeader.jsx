@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { HeaderWrapper } from './style';
-import logo from '../../images/logo.webp';
+import logo from '../../images/logo.png';
 import logoSm from '../../images/logo.png';
 import bar from '../../images/bar.png';
 import userIcon from '../../images/userIcon.webp';
@@ -48,7 +48,7 @@ function DashboardHeader({ toggle, setToggle }) {
         marginRight:"20px",
         // backgroundImage: `url(${Footer})`,
         backgroundSize: 'cover',
-        backgroundImage: `linear-gradient(rgba(255, 126, 95, 0.7), rgba(254, 180, 123, 0.7))`,
+        background: 'linear-gradient(90deg, #00bfa6, #00d4ff)',
       }}
       className='flex justify-between'
     >

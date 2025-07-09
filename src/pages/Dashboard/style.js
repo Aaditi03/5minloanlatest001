@@ -122,7 +122,7 @@ export const DashboarCarddWrapper = styled.div`
     }
 
     &.active {
-background: linear-gradient(90deg, #ff6a5f, #ffb88c); /* Vibrant warm gradient */
+        background: 'linear-gradient(90deg, #00bfa6, #00d4ff)',
     }
   }
 

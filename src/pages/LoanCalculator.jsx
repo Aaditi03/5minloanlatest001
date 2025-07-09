@@ -1,125 +1,174 @@
-import React from "react";
-import { Container, Grid, Paper, Typography } from "@mui/material";
-import { useInView } from "react-intersection-observer";
+import React from 'react';
+import Icon5 from '../images/icon5.png';
+import Icon6 from '../images/icon6.png';
+import Icon7 from '../images/icon7.png';
+import Icon8 from '../images/icon8.png';
+import Icon9 from '../images/icon9.png';
+import Imageonly from '../images/imageonly.png';
 
-const LoanCalculate = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
+const featureData = [
+  {
+    icon: Icon5,
+    title: 'Loan Amount',
+    description: 'Loan from ₹5000 - ₹100000',
+  },
+  {
+    icon: Icon6,
+    title: 'Loan Tenure',
+    description: 'Tenure from 7 to 40 days',
+  },
+  {
+    icon: Icon7,
+    title: '100% Paperless',
+    description: '100% Paperless Verification',
+  },
+  {
+    icon: Icon8,
+    title: 'Instant Loan',
+    description: 'Swift Payout',
+  },
+  {
+    icon: Icon9,
+    title: 'Unsecured Loan',
+    description: 'Start now',
+  },
+];
 
+const LoanFeatures = () => {
   return (
-    <Container
-      sx={{
-        padding: 4,
-        position: "relative",
-        overflow: "hidden",
-        zIndex: 1,
-      }}
-    >
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-      >
-        <source
-          src="https://publicramlella.s3.ap-south-1.amazonaws.com/public_assets/SpeedoLoanPublicAssests/Navy+Pink+Social+Marketer+YouTube+Thumbnail+(2)+(2)-Dwlc-zzw.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+    <div className="features-section">
+      <div className="features-grid">
+        {featureData.map((item, index) => (
+          <div className="feature-card" key={index}>
+            <div className="feature-inner">
+              <div className="icon-wrapper">
+                <img src={item.icon} alt={item.title} className="feature-icon" />
+              </div>
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <Typography
-        variant="h3"
-        sx={{
-          textAlign: "center",
-          fontWeight: "bold",
-          color: "white",
-          mb: 4,
-          fontSize: "3rem",
-          "&:hover": {
-            color: "orange",
-          },
-        }}
-      >
-        Where we can be a life saver
-      </Typography>
+      <img src={Imageonly} alt="Loan Info" className="below-section-image" />
 
-      <Grid container spacing={4} ref={ref}>
-        {["Health", "Unexpected Expenses", "Credit Card Pay", "Vacation"].map(
-          (title, index) => (
-            <Grid item lg={6} key={index}>
-              <Paper
-                elevation={3}
-                sx={{
-                  padding: 3,
-                  backgroundColor: "rgba(255, 255, 255, 0.7)",
-                  color: "#000",
-                  minHeight: "250px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  transition:
-                    "transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease",
-                  opacity: inView ? 1 : 0,
-                  transform: inView ? "translateY(0)" : "translateY(-20px)",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                    backgroundColor: "white",
-                    boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.2)",
-                    color: "black",
-                  },
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <span
-                    style={{
-                      fontSize: "24px",
-                      color: "white",
-                      backgroundColor: "darkgray",
-                      borderRadius: "50%",
-                      width: "50px",
-                      height: "50px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginRight: "16px",
-                      transition: "background-color 0.3s ease, color 0.3s ease",
-                    }}
-                  >
-                    {index + 1}
-                  </span>
-                  <Typography variant="h6" component="strong" color="inherit">
-                    {title}
-                  </Typography>
-                </div>
-                <Typography variant="body2" color="inherit" sx={{ mt: 1 }}>
-                  {title === "Health" &&
-                    "At Speedo Loan we provide immediate financial assistance by way of loan, for your untimely medical bills or emergencies. You can take care of your loved ones without any financial fears!"}
-                  {title === "Unexpected Expenses" &&
-                    "Speedo Loan helps you handle unexpected expenses in just a fraction of second. Whether it's a medical bill, car repair, or wedding costs, our quick application gets you funds in as little as 5 minutes with flexible loan options."}
-                  {title === "Credit Card Pay" &&
-                    "At Speedo Loan, we consolidate your high-interest loans into a single loan with fixed terms, allowing you to manage your payments more easily and pay off debt faster!"}
-                  {title === "Vacation" &&
-                    "Your well-deserved vacation doesn’t have to be put on hold due to the lack of finances! With our Speedo Loan’s quickest services, you can enjoy your dream trip without any delay!"}
-                </Typography>
-              </Paper>
-            </Grid>
-          )
-        )}
-      </Grid>
-    </Container>
+      <style jsx>{`
+        .features-section {
+          background: #f8fdff;
+          padding: 50px 0;
+          text-align: center;
+        }
+
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 30px;
+          max-width: 1500px;
+          margin: 50px 50px;
+          width: auto;
+        }
+
+        .feature-card {
+          background: linear-gradient(135deg, #01cbb3, #3a7bd5);
+          padding: 6px;
+          border-radius: 25px;
+          transition: transform 0.3s ease;
+          height: 220px;
+        }
+
+        .feature-card:hover {
+          transform: translateY(-5px);
+        }
+
+        .feature-inner {
+          background: white;
+          border-radius: 20px;
+          padding: 30px 20px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .icon-wrapper {
+          background: linear-gradient(135deg, #01cbb3, #3a7bd5);
+          border-radius: 50%;
+          width: 75px;
+          height: 75px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+
+        .feature-icon {
+          width: 40px;
+          height: 40px;
+        }
+
+        h4 {
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #333;
+          margin: 0;
+        }
+
+        .below-section-image {
+          margin-top: 40px;
+          max-width: 100%;
+          height: auto;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+          .features-grid {
+            display: flex;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            gap: 16px;
+            padding-bottom: 15px;
+            margin: 0 30px;
+            scrollbar-width: thin;
+            scrollbar-color: #bbb transparent;
+          }
+
+          .feature-card {
+            width: 180px;
+            flex: 0 0 auto;
+          }
+
+          .feature-inner {
+            padding: 20px 15px;
+          }
+
+          .icon-wrapper {
+            width: 60px;
+            height: 60px;
+          }
+
+          .feature-icon {
+            width: 32px;
+            height: 32px;
+          }
+
+          h4 {
+            font-size: 15px;
+          }
+
+          p {
+            font-size: 13px;
+          }
+        }
+      `}</style>
+    </div>
   );
 };
 
-export default LoanCalculate;
+export default LoanFeatures;

@@ -23,7 +23,7 @@ const CostEffective = () => {
                 Cost Effective Loan Services
               </h1>
               <p>
-                At Speedoloan, we pride ourselves on providing cost-effective
+                At 5Minuteloan, we pride ourselves on providing cost-effective
                 loan services designed to meet your financial needs without
                 breaking the bank. Our competitive interest rates and
                 transparent fee structures ensure that you receive the best
@@ -39,14 +39,14 @@ const CostEffective = () => {
                 that can be adjusted to fit your budget, reducing the risk of
                 financial strain. Our expert advisors work closely with you to
                 identify the most economical options, ensuring you can manage
-                your loan repayments comfortably. At Speedoloan, we believe
+                your loan repayments comfortably. At 5Minuteloan, we believe
                 that financial support should be accessible and affordable, and
                 we strive to provide loan services that deliver exceptional
                 value and long-term savings.
               </p>
               <br />
               <div className="button_container flex justify-center">
-                <Link to="/apply-now">Apply Now</Link>
+                <a href="https://agrimfincap.roopya.money/customer/personal_loan/c4f785faa778307080bb24382f32b9ec862f5f8af733408582f79bf59888aa7a/2f0be3f1474e21f6fa21b6fd407d7bf2891c74e73da741bf82ed2966a6d2aeb2">Apply Now</a>
               </div>
             </div>
           </div>

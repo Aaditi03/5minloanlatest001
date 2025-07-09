@@ -23,7 +23,7 @@ const MinimalCommitment = () => {
                 Short and Minimal Commitments
               </h1>
               <p>
-                At Speedoloan, we understand that financial commitments can be
+                At 5Minuteloan, we understand that financial commitments can be
                 daunting, which is why we offer loan services with minimal
                 commitment requirements. Our flexible loan options are designed
                 to accommodate your specific needs without locking you into
@@ -42,13 +42,13 @@ const MinimalCommitment = () => {
                 decisions about your borrowing needs. Our dedicated team is
                 always available to offer support and answer any questions,
                 making the entire loan process smooth and stress-free. With
-                Speedoloan, you can enjoy the benefits of financial
+                5Minuteloan, you can enjoy the benefits of financial
                 flexibility and minimal commitment, giving you greater control
                 over your financial future
               </p>
               <br />
               <div className="button_container flex justify-center">
-                <Link to="/apply-now">Apply Now</Link>
+                <a href="https://agrimfincap.roopya.money/customer/personal_loan/c4f785faa778307080bb24382f32b9ec862f5f8af733408582f79bf59888aa7a/2f0be3f1474e21f6fa21b6fd407d7bf2891c74e73da741bf82ed2966a6d2aeb2">Apply Now</a>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const ShortLoan = () => {
               </div>
               <h1 className="page_title mt30 mb20">Short Term Loan</h1>
               <p>
-                At Speedoloan, we understand that financial crises can arise
+                At 5Minuteloan, we understand that financial crises can arise
                 unexpectedly and often require immediate action and rapid access
                 to funds. That's why we specialize in providing emergency loans
                 online to give you financial support whenever you need it. Our
@@ -39,7 +39,7 @@ const ShortLoan = () => {
                 short term, helping you manage your finances without the
                 responsibility of long-term commitments. We have updated the
                 short-term loan process to ensure that you get the money you
-                need quickly and easily. Choosing a Speedoloan means choosing a
+                need quickly and easily. Choosing a 5Minuteloan means choosing a
                 financial institution that prioritizes your financial needs
                 quickly, reliably and efficiently. Our emergency loan services
                 are designed to give you the peace of mind you need when it
@@ -49,7 +49,7 @@ const ShortLoan = () => {
               </p>
               <br />
               <p>
-                At Speedoloan, you can trust our commitment to providing fast,
+                At 5Minuteloan, you can trust our commitment to providing fast,
                 reliable online emergency and short-term loans. Our dedicated
                 team is working hard to ensure the success of your application
                 so that you can solve your financial problems safely. one We
@@ -62,16 +62,16 @@ const ShortLoan = () => {
               <br />
               <p>
                 Whether you're facing unexpected debt or need quick financial
-                support, Speedoloan has the emergency loans and short-term loan
+                support, 5Minuteloan has the emergency loans and short-term loan
                 solutions you need. Our reliable and efficient services are
                 designed to meet your urgent financial needs by offering the
-                convenience and assurance of a trusted partner at Speedoloan. Let
+                convenience and assurance of a trusted partner at 5Minuteloan. Let
                 us help you manage your financial emergencies with ease and
                 confidence.
               </p>
               <br />
               <div className="button_container flex justify-center">
-                <Link to="/apply-now">Apply Now</Link>
+                <a href="https://agrimfincap.roopya.money/customer/personal_loan/c4f785faa778307080bb24382f32b9ec862f5f8af733408582f79bf59888aa7a/2f0be3f1474e21f6fa21b6fd407d7bf2891c74e73da741bf82ed2966a6d2aeb2">Apply Now</a>
               </div>
             </div>
           </div>

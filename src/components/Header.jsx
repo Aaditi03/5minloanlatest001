@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/Common.css";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import logo from "../images/speedologo.webp";
+import logo from "../images/logo.png";
 import { getStorage } from "../Utils/common";
 
 const Header = () => {
@@ -71,9 +71,9 @@ const Header = () => {
       Dashboard
     </button>
   ) : (
-    <NavLink to="/apply-now" className="apply_now_button_link" onClick={showNavbar}>
+    <a href="https://agrimfincap.roopya.money/customer/personal_loan/c4f785faa778307080bb24382f32b9ec862f5f8af733408582f79bf59888aa7a/2f0be3f1474e21f6fa21b6fd407d7bf2891c74e73da741bf82ed2966a6d2aeb2" className="apply_now_button_link" onClick={showNavbar}>
       Apply Now
-    </NavLink>
+    </a>
   )}
 </li>
 <li>

@@ -66,7 +66,7 @@ const Services = () => {
                 </div>
                 <h3 className="box_title">Short Loan</h3>
                 <p className="service_card_text">
-                  Discover the convenience of short loans at Speedoloan,
+                  Discover the convenience of short loans at 5Minuteloan,
                   designed to meet your immediate financial needs with ease. Our
                   quick approval process ensures that you can access the funds
                   you need.
@@ -179,7 +179,7 @@ const Services = () => {
                     <h4>Short Loan</h4>
                   </div>
                   <p>
-                    Discover the convenience of short loans at Speedoloan,
+                    Discover the convenience of short loans at 5Minuteloan,
                     designed to meet your immediate financial needs with ease.
                   
                   </p>

@@ -57,7 +57,7 @@ function RepayPage(props) {
         key: "rzp_live_gSedwg0IRWdr5a",
         amount: (total_due_amount * 100).toString(),
         currency: "INR",
-        name: "Speedoloan",      
+        name: "5Minuteloan",      
         image: "https://web.salaryontime.in/public/images/final_logo.png",
         order_id: order?.Data?.order_id,
         // callback_url: "https://salaryontime.in/thankyou",

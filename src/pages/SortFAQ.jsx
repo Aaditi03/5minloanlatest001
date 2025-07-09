@@ -6,7 +6,6 @@ import {
     Typography,
     Box,
     Paper,
-    Container,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -18,46 +17,39 @@ const SortFAQ = () => {
         const observer = new IntersectionObserver(
             (entries) => {
                 const entry = entries[0];
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                } else {
-                    setIsVisible(false); // Reset animation when the component leaves the view
-                }
+                setIsVisible(entry.isIntersecting);
             },
-            {
-                threshold: 0.1, // Trigger when 10% of the component is visible
-            }
+            { threshold: 0.1 }
         );
 
-        if (faqRef.current) {
-            observer.observe(faqRef.current);
-        }
+        if (faqRef.current) observer.observe(faqRef.current);
 
         return () => {
-            if (faqRef.current) {
-                observer.unobserve(faqRef.current);
-            }
+            if (faqRef.current) observer.unobserve(faqRef.current);
         };
     }, []);
 
     return (
-        <Container
-            className="loan-calculate"
+        <Box
+            ref={faqRef}
             sx={{
                 padding: 4,
-                background: '#f0fff0',
+                background: '#f1fdfc',
+                width: 'calc(100% - 80px)',
+                mx: '40px', // margin left & right
+                borderRadius: '12px',
+                boxShadow: 3,
             }}
-            ref={faqRef}
         >
             <Typography
                 variant="h3"
                 sx={{
                     textAlign: 'center',
                     fontWeight: 'bold',
-                    color: '#135deg',
+                    color: '#00CBB8',
                     mb: 4,
-                    fontSize: '3rem',
-                    fontFamily: 'Arial, sans-serif', // Changed to simple font
+                    fontSize: '2.8rem',
+                    fontFamily: 'Arial, sans-serif',
                 }}
             >
                 Frequently Asked Questions
@@ -66,9 +58,10 @@ const SortFAQ = () => {
             <Box
                 sx={{
                     padding: '2rem',
-                    backgroundColor: '#f7f7f7',
+                    backgroundColor: '#ffffff',
                     opacity: isVisible ? 1 : 0,
                     transition: 'opacity 1s ease-in-out',
+                    borderRadius: '8px',
                 }}
             >
                 <Paper elevation={3} sx={{ borderRadius: '8px', overflow: 'hidden' }}>
@@ -79,17 +72,17 @@ const SortFAQ = () => {
                             transition: 'transform 1s ease-in-out',
                         }}
                     >
-                        {/* FAQ Accordion Items */}
                         {faqItems.map((faq, index) => (
                             <Accordion
                                 key={index}
                                 sx={{
                                     marginBottom: '1rem',
-                                    backgroundColor: 'white',
+                                    backgroundColor: '#f9f9f9',
+                                    border: `1px solid #00CBB8`,
                                     animation: isVisible
                                         ? `dropDownAnimation 0.5s ease-in-out ${index * 0.2}s forwards`
                                         : 'none',
-                                    opacity: isVisible ? 1 : 0, // Reset opacity when component goes out of view
+                                    opacity: isVisible ? 1 : 0,
                                     '@keyframes dropDownAnimation': {
                                         '0%': {
                                             opacity: 0,
@@ -102,29 +95,30 @@ const SortFAQ = () => {
                                     },
                                 }}
                             >
-                               <AccordionSummary
-                                expandIcon={<ExpandMoreIcon />}
-                                aria-controls={`faq${index}-content`}
-                                id={`faq${index}-header`}
-                                sx={{
-                                    backgroundColor: 'white',
-                                    color: 'black', // Set text color to black
-                                    transition: ' 5s ease-in-out', // Change transition duration and type
-                                    '&:hover': {
-                                        backgroundColor: 'orange', // Change to orange on hover
-                                    },
-                                    '&.Mui-expanded': {
-                                        backgroundColor: '#ffa726', // Orange color when expanded
-                                        color: 'black', // Keep text color black when expanded
-                                    },
-                                }}
-                            >
-                                    <Typography sx={{ fontFamily: 'Arial, sans-serif', color: 'black' }}> {/* Simple font and black color */}
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon sx={{ color: '#007BDA' }} />}
+                                    aria-controls={`faq${index}-content`}
+                                    id={`faq${index}-header`}
+                                    sx={{
+                                        backgroundColor: 'white',
+                                        color: '#007BDA',
+                                        fontWeight: 600,
+                                        transition: '0.3s ease-in-out',
+                                        '&:hover': {
+                                            backgroundColor: '#e0f7fa',
+                                        },
+                                        '&.Mui-expanded': {
+                                            backgroundColor: '#00CBB8',
+                                            color: 'white',
+                                        },
+                                    }}
+                                >
+                                    <Typography sx={{ fontFamily: 'Arial, sans-serif', fontWeight: 600 }}>
                                         {index + 1}. {faq.question}
                                     </Typography>
                                 </AccordionSummary>
                                 <AccordionDetails>
-                                    <Typography sx={{ fontFamily: 'Arial, sans-serif', color: 'black' }}> {/* Simple font and black color */}
+                                    <Typography sx={{ fontFamily: 'Arial, sans-serif', color: '#444' }}>
                                         {faq.answer}
                                     </Typography>
                                 </AccordionDetails>
@@ -133,27 +127,26 @@ const SortFAQ = () => {
                     </div>
                 </Paper>
             </Box>
-        </Container>
+        </Box>
     );
 };
 
-// FAQ items data
 const faqItems = [
     {
-        question: 'What is Speedo Loan?',
-        answer: 'Speedoloan.com is a digital platform that provides fast and easy personal loans to salaried professionals in India.',
+        question: 'What is 5MinuteLoan?',
+        answer: '5MinuteLoan.com is a digital platform that provides fast and easy personal loans to salaried professionals in India.',
     },
     {
-        question: 'Who can apply for a personal loan on Speedo Loan?',
-        answer: 'Any salaried individual aged 21 to 60, employed full-time, can apply for a personal loan on Speedoloan.com.',
+        question: 'Who can apply for a personal loan on 5MinuteLoan?',
+        answer: 'Any salaried individual aged 21 to 60, employed full-time, can apply for a personal loan on 5MinuteLoan.com.',
     },
     {
-        question: 'How much loan amount can I get from Speedo Loan?',
+        question: 'How much loan amount can I get from 5MinuteLoan?',
         answer: 'We offer personal loans ranging from ₹5,000 to ₹1,00,000, depending on your salary and credit history.',
     },
     {
-        question: 'How do I apply for a loan on Speedo Loan?',
-        answer: 'Applying for a loan on Speedoloan.com is easy. Just fill out the form, submit the required documents, and receive instant approval from our end.',
+        question: 'How do I apply for a loan on 5MinuteLoan?',
+        answer: 'Applying for a loan on 5MinuteLoan.com is easy. Just fill out the form, submit the required documents, and receive instant approval from our end.',
     },
     {
         question: 'What documents do I need to apply for a loan?',

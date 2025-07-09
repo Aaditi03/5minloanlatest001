@@ -52,19 +52,19 @@ const Home = () => {
   const advantages = [
     {
       title: "Easy Application",
-      content: "Gone are the days when the loan application process was itself a headache. Now, you need not visit a bank and sign a bundle of documents because we allow online paperless loan applications with minimum documentation. Don’t stand in the long queue at your nearest bank, instead open the Speedoloan app and complete the application process in the blink of an eye."
+      content: "Gone are the days when the loan application process was itself a headache. Now, you need not visit a bank and sign a bundle of documents because we allow online paperless loan applications with minimum documentation. Don't stand in the long queue at your nearest bank, instead open the 5Minuteloan app and complete the application process in the blink of an eye."
     },
     {
       title: "Prompt Approval",
-      content: "As soon as we receive a loan application, we immediately swing into action. We meticulously review the loan application and if everything is good to go, we instantly approve it in a flash. Speedoloan understands how important your time is, which is why we believe in prompt approval and super-fast bank transfers."
+      content: "As soon as we receive a loan application, we immediately swing into action. We meticulously review the loan application and if everything is good to go, we instantly approve it in a flash. 5Minuteloan understands how important your time is, which is why we believe in prompt approval and super-fast bank transfers."
     },
     {
       title: "Ultrafast Loan Disbursal",
-      content: "The reason why Speedoloan has made a special name for itself is its ultrafast loan disbursal feature. We are as fast as a lightning bolt in transferring the loan amount directly to your bank account. Once the loan is approved by our team, we waste no time in disbursing the amount."
+      content: "The reason why 5Minuteloan has made a special name for itself is its ultrafast loan disbursal feature. We are as fast as a lightning bolt in transferring the loan amount directly to your bank account. Once the loan is approved by our team, we waste no time in disbursing the amount."
     },
     {
       title: "No Hidden Charges",
-      content: "Hidden charges may come as a shock, making you sceptical about whether to take the loan or not. At Speedoloan, we aim to simplify your financial complications with our 'No Hidden Charges' policy that makes things transparent."
+      content: "Hidden charges may come as a shock, making you sceptical about whether to take the loan or not. At 5Minuteloan, we aim to simplify your financial complications with our 'No Hidden Charges' policy that makes things transparent."
     },
     {
       title: "Easy-to-Repay Options",
@@ -82,12 +82,12 @@ const Home = () => {
         <Banner />
         <Process />
         <Calculator />
-        <WhyChoose />
+        {/* <WhyChoose /> */}
         <LoanCalculate />
 {/* <LoanCalculate /> */}
         <LoanPart />
-        <LoanEligibility />
-        <LoanProcessDiagram />
+        {/* <LoanEligibility /> */}
+        {/* <LoanProcessDiagram /> */}
         <SortFAQ />
 
         {/* <div className="about_us ">
@@ -100,17 +100,17 @@ const Home = () => {
                     style={{ marginBottom: "-2px" }}
                   />
                 </span>
-                <span>About Speedoloan</span>
+                <span>About 5Minuteloan</span>
               </p>
               <h2 className="mt20">
-                Speedoloan: Your Trusted <span>Finance Company</span>
+                5Minuteloan: Your Trusted <span>Finance Company</span>
               </h2>
             </div>
             <div className="about_para">
               <p style={{textAlign:"justify"}}>
               We are an RBI-registered non-banking financial company(NBFC), offering instant personal loans without CIBIL checks to help you deal with urgent financial situations effectively. Whether you seek an instant personal loan online to pay medical bills, credit card repayment, travel expenses, monthly expenses, instant school/college fees, etc, we are always there to help you escape such tricky financial circumstances with ease. Apply to a variety of loans, such as emergency loans, short-term loans, long-term loans, etc from our website and get the loan amount disbursed in your account in 10 minutes. {" "}
                 <span className="hide_content">
-                  At Speedoloan, our goal is to offer seamless financial
+                  At 5Minuteloan, our goal is to offer seamless financial
                   solutions that cater to your urgent requirements. Experience
                   the convenience and reliability of our services as we strive
                   to be your go-to finance company for all your cash loan needs.
@@ -178,7 +178,7 @@ const Home = () => {
               </div>
               <div className="card_content">
                 <p>
-                  Discover the convenience of short loans at Speedoloan,
+                  Discover the convenience of short loans at 5Minuteloan,
                   designed to meet your immediate financial needs with ease. Our
                   quick approval process ensures that you can access the funds
                   you need.
@@ -226,7 +226,7 @@ const Home = () => {
               Get Started <span>Instantly</span>
             </h2>
             <p className="full-width text-center mt5">
-              Download the Speedoloan app and get moving
+              Download the 5Minuteloan app and get moving
             </p>
           </div>
           <div className="get_started_row">
@@ -332,12 +332,14 @@ const Home = () => {
                     <FaApple className="app_download_icon" />
                   </Link>
                   <Link
-                    to="https://play.google.com/store/apps/details?id=com.salaryontime.Speedoloan"
+                    to="https://play.google.com/store/apps/details?id=com.salaryontime.5Minuteloan"
                     target="_blank"
                   >
                     <DiAndroid className="app_download_icon" />
                   </Link>
-                  
+                  <a href="https://agrimfincap.roopya.money/customer/personal_loan/c4f785faa778307080bb24382f32b9ec862f5f8af733408582f79bf59888aa7a/2f0be3f1474e21f6fa21b6fd407d7bf2891c74e73da741bf82ed2966a6d2aeb2" className="apply_now_button">
+                    Apply Now
+                  </a>
                 </div>
               </div>
               

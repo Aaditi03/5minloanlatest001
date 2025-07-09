@@ -130,7 +130,7 @@ function LoanCalculator() {
               />
             </div>
           </div>
-          <div className="box">
+          {/* <div className="box">
             <div className="flex space-between">
               <h2>Principal <span style={{color: "red"}}>*</span></h2>
               <span className="value">₹ {principal}</span>
@@ -144,7 +144,79 @@ function LoanCalculator() {
                 setValue={setPrincipal}
               />
             </div>
-          </div>
+          </div> */}
+
+<div className="box">
+  <div className="flex space-between">
+    <h2>Enter Loan Amount <span style={{ color: "red" }}>*</span></h2>
+  </div>
+  
+  {/* Input Field for Loan Amount */}
+  <div className="center">
+    <input
+      type="number"
+      className="form-control principal-input"
+      value={principal}
+      onChange={(e) => {
+        let value = e.target.value.replace(/\D/g, ""); // Allow only numbers
+        setPrincipal(value ? Math.min(Math.max(parseInt(value, 10), 5000), 100000) : "");
+      }}
+      onBlur={(e) => {
+        let value = parseInt(e.target.value, 10);
+        if (isNaN(value) || value < 5000) {
+          setPrincipal(5000);
+        } else if (value > 100000) {
+          setPrincipal(100000);
+        }
+      }}
+      placeholder="Enter Loan Amount (₹5000 - ₹100000)"
+      min="5000"
+      max="100000"
+      step="500"
+      style={{
+        width: "100%",
+        padding: "10px",
+        borderRadius: "8px",
+        border: "1px solid #ccc",
+        fontSize: "16px",
+        textAlign: "center",
+        boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
+      }}
+    />
+  </div>
+
+  {/* Range Slider */}
+  <div className="range-container" style={{ marginTop: "10px" }}>
+    <input
+      type="range"
+      className="principal-slider"
+      min="5000"
+      max="100000"
+      step="500"
+      value={principal}
+      onChange={(e) => setPrincipal(e.target.value)}
+      style={{
+        width: "100%",
+        cursor: "pointer",
+        accentColor: "#007BFF",
+      }}
+    />
+  </div>
+
+  {/* Display Selected Amount */}
+  <div style={{
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: "18px",
+    marginTop: "5px",
+    color: "#007BFF"
+  }}>
+    Selected Amount: ₹ {principal}
+  </div>
+</div>
+
+
+
           <div className="box">
             <div className="flex space-between">
               <h2>Tenure <span style={{color: "red"}}>*</span></h2>

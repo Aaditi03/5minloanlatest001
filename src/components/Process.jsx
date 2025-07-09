@@ -1,229 +1,124 @@
-import React, { useEffect, useRef } from 'react';
-import { Box, Typography, Grid, Paper } from '@mui/material';
-import LightningImage from '../images//3.webp'; 
-import TransferImage from '../images/1.webp'; 
-import SupportImage from '../images/2.webp'; 
+import React, { useEffect, useState } from 'react';
+import image1 from "../images/image3.png";
+import image2 from "../images/image1.png";
+import image3 from "../images/image2.png";
 
-const FeaturesComponent = () => {
-  const boxRef = useRef(null);
+const Process = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Add animation when component comes into view
   useEffect(() => {
-    const handleScroll = () => {
-      if (boxRef.current) {
-        const { top } = boxRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        if (top < windowHeight && top > 0) {
-          boxRef.current.classList.add('animate');
-        }
-      }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    if (window.innerWidth < 768) {
-      boxRef.current.classList.add('animate');
-    } else {
-      window.addEventListener('scroll', handleScroll);
-    }
-
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <Box
-      ref={boxRef}
-      sx={{
-        padding: 4,
-        textAlign: 'left',
-        backgroundColor: '#f9f9f9',
-        maxWidth: '1600px',
-        margin: '0 auto',
-        transition: 'opacity 0.5s',
-        opacity: 0,
-        border: '2px solid lightgray',
+    <div
+      style={{
+        margin: '50px 40px', // Left & Right margin
         borderRadius: '40px',
-        '&.animate': {
-          opacity: 1,
-          animation: 'fadeIn 0.5s forwards',
-        },
+        overflow: 'hidden',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
       }}
     >
-      <Typography
-        sx={{
-          marginTop: '50px',
-          color: 'black',
-          fontSize: { xs: '0.5rem', sm: '1.2rem' },
-          mb: 2,
-          textAlign: 'left',
-          lineHeight: 1,
-          '&:hover': {
-            color: 'orange',
-            transition: 'color 0.5s',
-          },
+      <div
+        style={{
+          background: 'linear-gradient(135deg, #00AEEF, #0072BC)',
+          padding: isMobile ? '40px 20px' : '80px 60px',
+          textAlign: 'center',
+          color: '#fff',
         }}
       >
-    <h1 style={{fontWeight: 'bold',}}>  GET LOAN IN 5 MINUTES </h1>
-        <br />
-        <Typography
-          sx={{
-            marginTop: '40px',
-            color: 'black',
-            fontSize: { xs: '1.5rem', sm: '4rem' },
-            mb: 3,
-            fontWeight: 'bold',
-            textAlign: 'left',
-            lineHeight: 1,
-            '&:hover': {
-              color: 'orange',
-              transition: 'color 0.5s',
-            },
-          }}
-          component="span"
-        >
-          Try Us!<br />
-        </Typography>
-        <Typography
-          variant="h4"
-          sx={{
-            mt:'20px',
-            color: 'black',
-            fontWeight: 'bold',
-            fontSize: { xs: '1rem', sm: '1.5rem' },
-            mb: { xs: 2, sm: 3 },
-            textAlign: 'left',
-            '&:hover': {
-              color: 'black',
-              transition: 'color 0.3s',
-            },
-          }}
-        >
-          Tired of lenders collecting your information only to deny your applications?
-          <br />
-          At Speedo Loan, we're proud to offer a solution that's notably better, <br />
-          designed to exceed your expectations.
-        </Typography>
-      </Typography>
-      <Grid container spacing={3} justifyContent="center" sx={{ mt: 4 }}>
-        <Grid item xs={12} sm={4}>
-          <Paper
-            elevation={3}
-            sx={{
-              padding: 3,
-              borderRadius: '10px',
-              textAlign: 'center',
-              transition: 'transform 0.5s',
-              '&:hover': {
-                transform: 'scale(1.05)',
-              },
-              height: '100%',
-            }}
-          >
-            <Box
-              component="img"
-              src={LightningImage}
-              alt="Lightning Fast Approval"
-              sx={{
-                width: { xs: '80px', sm: '100px', md: '120px' },
-                height: { xs: '80px', sm: '100px', md: '120px' },
-                marginBottom: '16px',
-                objectFit: 'cover',
-                borderRadius: '50%',
-                animation: 'zoomIn 3s infinite',
-              }}
-            />
-            <Typography variant="h6" sx={{ color: 'black', fontSize: { xs: '1.2rem', sm: '1.5rem' }, mb: 1 }}>
-              Lightning-Fast Approval
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-            Complete our online application in just<strong style={{ color: 'black' }}> 5 minutes</strong>, with quick approvals granted.            </Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper
-            elevation={3}
-            sx={{
-              padding: 3,
-              borderRadius: '10px',
-              textAlign: 'center',
-              transition: 'transform 0.5s',
-              '&:hover': {
-                transform: 'scale(1.05)',
-              },
-              height: '100%',
-            }}
-          >
-            <Box
-              component="img"
-              src={TransferImage}
-              alt="Quick Funds Transfer"
-              sx={{
-                width: { xs: '80px', sm: '100px', md: '120px' },
-                height: { xs: '80px', sm: '100px', md: '120px' },
-                marginBottom: '16px',
-                objectFit: 'cover',
-                borderRadius: '50%',
-                animation: 'zoomIn 3s infinite',
-              }}
-            />
-            <Typography variant="h6" sx={{ color: 'black', fontSize: { xs: '1.2rem', sm: '1.5rem' }, mb: 1 }}>
-              Quick Funds Transfer
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-            Receive your approved funds <strong style={{ color: 'black' }}>instantly</strong>, allowing you to tackle expenses without delay.
-          </Typography>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: isMobile ? '2rem' : '2.8rem', fontWeight: '800', marginBottom: '10px' }}>
+            Get loan in just <span style={{ color: '#FFEB3B' }}>5 minutes</span>
+          </h2>
+          <p style={{ maxWidth: '750px', margin: 'auto', fontSize: '1.1rem', lineHeight: '1.6' }}>
+            Tired of lenders collecting your information only to deny your applications?
+            <br />
+            At 5 Minute Loan, we're proud to offer a solution that's notably better, designed to exceed your expectations.
+          </p>
 
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper
-            elevation={3}
-            sx={{
-              padding: 3,
-              borderRadius: '10px',
-              textAlign: 'center',
-              transition: 'transform 0.5s',
-              '&:hover': {
-                transform: 'scale(1.05)',
-              },
-              height: '100%',
+          {/* Upper two boxes */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              gap: '30px',
+              marginTop: '60px',
             }}
           >
-            <Box
-              component="img"
-              src={SupportImage}
-              alt="Expert Customer Support"
-              sx={{
-                width: { xs: '80px', sm: '100px', md: '120px' },
-                height: { xs: '80px', sm: '100px', md: '120px' },
-                marginBottom: '16px',
-                objectFit: 'cover',
-                borderRadius: '50%',
-                animation: 'zoomIn 3s infinite',
-              }}
+            <Card
+              heading="Fast Approval"
+              // subtitle="Lightning"
+              description="Complete our online application in just 5 minutes, with quick approvals granted."
+              imgSrc={image1}
+              width={isMobile ? '100%' : '45%'}
             />
-            <Typography variant="h6" sx={{ color: 'black', fontSize: { xs: '1.2rem', sm: '1.5rem' }, mb: 1 }}>
-              Expert Customer Support
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'gray', fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-            Our customer support team is available from 10:30 AM to 6:30 PM IST to assist you with any questions or concerns all throughout the process.            </Typography>
-          </Paper>
-        </Grid>
-      </Grid>
-      <style>
-        {`
-          @keyframes zoomIn {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-          }
-          @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-          }
-        `}
-      </style>
-    </Box>
+            <Card
+              heading="Funds Transfer"
+              // subtitle="Quick"
+              description={
+                <>
+                    Receive your approved funds instantly
+                    , allowing you to tackle expenses without delay.
+                </>
+              }
+              imgSrc={image2}
+              width={isMobile ? '100%' : '45%'}
+            />
+          </div>
+
+          {/* Bottom wide box */}
+          <div style={{ marginTop: '30px' }}>
+            <Card
+              heading="Customer Support"
+              // subtitle="Expert"
+              description="Our customer support team is available from 10:00 AM to 6:30 PM IST to assist you with any questions or concerns all throughout the process."
+              imgSrc={image3}
+              width="100%"
+              style={{ marginLeft: 0 }}
+              isFull
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default FeaturesComponent;
+const Card = ({ heading, subtitle, description, imgSrc, width, style, isFull }) => (
+  <div
+    style={{
+      background: '#fff',
+      borderRadius: '20px',
+      padding: '30px',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      color: '#333',
+      width: width || '100%',
+      boxShadow: '0 8px 20px rgba(0,0,0,0.08)',
+      flexWrap: 'wrap',
+      ...style,
+    }}
+  >
+    <div style={{ flex: 1, textAlign: 'left', minWidth: '200px' }}>
+      <div style={{ fontSize: '1.2rem', fontWeight: '500', color: '#555' }}>{subtitle}</div>
+      <div style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '10px' }}>{heading}</div>
+      <div style={{ fontSize: '1rem', lineHeight: '1.5' }}>{description}</div>
+    </div>
+    <div style={{ marginLeft: '30px' }}>
+      <img src={imgSrc} alt={heading} style={{ maxHeight: '100px', width: 'auto' }} />
+    </div>
+  </div>
+);
+
+export default Process;

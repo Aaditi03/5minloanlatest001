@@ -88,7 +88,7 @@ const RateandTerms = () => {
               <div className="content_item" style={{ maxWidth: "90%" }}>
                 <h2 className="mb10">How Do Our Rates and Fees Work?</h2>
                 <span>
-                  At Speedoloan, we strive to offer transparent and
+                  At 5Minuteloan, we strive to offer transparent and
                   competitive rates and fees to our customers. Here's how our
                   rates and fees structure works:
                 </span>
@@ -121,7 +121,7 @@ const RateandTerms = () => {
                       additional charges.
                     </li>
                     <li>
-                      <b>Prepayment Penalties:</b> At Speedoloan, we do not
+                      <b>Prepayment Penalties:</b> At 5Minuteloan, we do not
                       charge any prepayment penalties. You can repay your loan
                       early without any extra charges, allowing you to save on
                       interest costs.
@@ -144,7 +144,7 @@ const RateandTerms = () => {
               <div className="content_item" style={{ maxWidth: "90%" }}>
                 <h2 className="mb10">How Do Our Rates and Fees Work?</h2>
                 <span>
-                  At Speedoloan, we strive to offer transparent and
+                  At 5Minuteloan, we strive to offer transparent and
                   competitive rates and fees to our customers. Here's how our
                   rates and fees structure works:
                 </span>
@@ -177,7 +177,7 @@ const RateandTerms = () => {
                       additional charges.
                     </li>
                     <li>
-                      <b>Prepayment Penalties:</b> At Speedoloan, we do not
+                      <b>Prepayment Penalties:</b> At 5Minuteloan, we do not
                       charge any prepayment penalties. You can repay your loan
                       early without any extra charges, allowing you to save on
                       interest costs.
@@ -198,7 +198,7 @@ const RateandTerms = () => {
             </div>
             <div className="flex flex-center space-evenly content_row">
               <div className="content_item" style={{ maxWidth: "90%" }}>
-                <h2 className="mb10">Why Choose Speedoloan</h2>
+                <h2 className="mb10">Why Choose 5Minuteloan</h2>
                 <p className="light_color">
                   <ul>
                     <li>
@@ -295,7 +295,7 @@ const RateandTerms = () => {
                 </p>
                 <p className="mt6">
                   This example provides a clear picture of the costs associated
-                  with a typical loan from Speedoloan. Your actual rates and
+                  with a typical loan from 5Minuteloan. Your actual rates and
                   fees may vary based on your specific circumstances. For a
                   personalized quote, please complete the application form or
                   contact our customer service team.
